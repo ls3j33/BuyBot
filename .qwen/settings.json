@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv\\scripts\\python.exe *)",
+      "Bash(uv *)",
+      "Bash(timeout *)",
+      "Bash(curl *)",
+      "Bash(taskkill *)",
+      "Bash(rmdir *)",
+      "Bash(type *)",
+      "Bash(findstr *)",
+      "Bash(echo *)",
+      "Bash(python *)",
+      "Bash(del *)",
+      "Bash(cd *)"
+    ]
+  },
+  "$version": 3
+}
