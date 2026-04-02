@@ -12,7 +12,16 @@
       "Bash(echo *)",
       "Bash(python *)",
       "Bash(del *)",
-      "Bash(cd *)"
+      "Bash(cd *)",
+      "Bash(tasklist)",
+      "Bash(dir *)",
+      "Bash(powershell *)",
+      "Bash(last *)",
+      "Bash(start *)",
+      "Bash(c:\\data\\buybot\\run.bat)",
+      "Bash(git rm *)",
+      "Bash(git *)",
+      "Bash(mkdir *)"
     ]
   },
   "$version": 3

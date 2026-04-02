@@ -22,13 +22,15 @@ build/
 *.swp
 *.swo
 
-# ChromaDB
+# ChromaDB (векторная база данных)
 chroma_db/
 chroma_db_e5/
 *.chroma
 
 # Logs
+logs/
 *.log
+server.log
 
 # OS
 .DS_Store
@@ -43,3 +45,13 @@ check_existing.py
 
 # Scripts (optional)
 scripts/add_*.py
+
+# Data (CSV files - опционально, можно закоммитить если данные публичные)
+# data/*.csv
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+reports/
+*.json

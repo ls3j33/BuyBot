@@ -12,7 +12,7 @@ dependencies = [
     "langchain>=0.3.0",
     "langchain-core>=0.3.0",
     "langgraph>=0.2.0",
-    "langchain-openai>=0.3.0",
+    "langchain-ollama>=0.3.0",
     "langchain-community>=0.3.0",
     "langchain-huggingface>=0.3.0",
     "chromadb>=0.5.0",
@@ -28,6 +28,8 @@ dependencies = [
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "pytest-html>=4.0.0",
 ]
 
 [build-system]
@@ -42,4 +44,7 @@ asyncio_mode = "auto"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
-addopts = "-v --tb=short"
+addopts = "-v --tb=short -m 'not slow'"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]

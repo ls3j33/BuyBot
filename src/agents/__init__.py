@@ -1,27 +1,14 @@
-from src.agents.writer import writer_agent, is_recipe_query
+"""
+Агенты BuyBot.
+Импортируем агентов для регистрации в реестре, затем граф.
+"""
+# Явные импорты для регистрации агентов (должны быть ПЕРВЫМИ!)
+import src.agents.router_agent  # noqa: F401
+import src.agents.recipe_agent  # noqa: F401
+import src.agents.search_agent  # noqa: F401
 
-async def process_query(query: str, conversation_history=None):
-    """Обработать запрос через writer агента"""
-    from src.agents.state import AgentState
+# Импортируем граф после регистрации агентов
+from src.agents.graph import process_query_graph
 
-    # Для всех запросов передаём пустые search_results
-    # writer_agent сам определит что искать через LLM
-    state: AgentState = {
-        "user_query": query,
-        "search_results": [],  # Пустые — writer_agent найдёт сам
-        "rag_decision": None,
-        "writer_output": None,
-        "is_complete": False,
-        "messages": []
-    }
-
-    result = writer_agent(state)
-
-    output = result.get("writer_output", {})
-    return {
-        "response": output.get("response_text", ""),
-        "search_results": result.get("search_results", []),
-        "confidence": output.get("confidence", "low"),
-        "success": True,
-        "error": None
-    }
+# Публичный API
+__all__ = ["process_query_graph"]
